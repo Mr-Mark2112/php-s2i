@@ -20,7 +20,7 @@ LABEL autor="Vasiliy Grinko <vv.greenko@gmail.com>" \
 # Install packages
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main libavif dpkg 
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-        git nginx supervisor curl wget bash docker docker-compose gettext openssh-client openssl-dev alpine-sdk \ 
+        git nginx supervisor curl wget bash docker docker-compose gettext openssh-client openssl-dev alpine-sdk libressl3.5-libcrypto \ 
         $PHP_VERSION \
         $PHP_VERSION-common \
         $PHP_VERSION-bcmath \
