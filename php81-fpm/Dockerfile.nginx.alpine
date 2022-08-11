@@ -18,9 +18,9 @@ LABEL autor="Vasiliy Grinko <vv.greenko@gmail.com>" \
       io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
 
 # Install packages
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main libavif dpkg 
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main libavif dpkg libssl3
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-        git nginx supervisor curl wget bash docker docker-compose gettext openssh-client openssl-dev alpine-sdk libressl3.5-libcrypto \ 
+        git nginx supervisor curl wget bash docker docker-compose gettext openssh-client openssl-dev alpine-sdk py3-cryptography \ 
         $PHP_VERSION \
         $PHP_VERSION-common \
         $PHP_VERSION-bcmath \
@@ -62,7 +62,7 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/co
         $PHP_VERSION-pear \
         $PHP_VERSION-dev && \
         apk add --no-cache --update alpine-sdk && \
-        ln -s /usr/bin/$PHP_VERSION /usr/bin/php && \
+        #ln -s /usr/bin/$PHP_VERSION /usr/bin/php && \
         rm -rf /var/cache/apk/*
 
 # PHP Decimal (not supported by alpine yet)
