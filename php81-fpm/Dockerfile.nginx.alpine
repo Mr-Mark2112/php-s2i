@@ -75,7 +75,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Configure PHP-FPM
 #COPY /workspace/source/php81-fpm/config/fpm-pool.conf /etc/$PHP_VERSION/php-fpm.d/www.conf
-COPY /workspace/source/php81-fpm/config/php.ini /usr/local/etc/php/conf.d/php.ini
+#COPY /workspace/source/php81-fpm/config/php.ini /usr/local/etc/php/conf.d/php.ini
 
 WORKDIR /var/www/html
 
