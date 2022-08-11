@@ -71,8 +71,7 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/te
 # Python
 RUN ln -s /usr/bin/python3 /usr/bin/python
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
-#--disable-tls 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --disable-tls 
 
 # Configure PHP-FPM
 COPY /workspace/source/php81-fpm/config/fpm-pool.conf /etc/$PHP_VERSION/php-fpm.d/www.conf
