@@ -97,6 +97,7 @@ eval "$OVERRIDE_COMPOSER_COMMAND" || exit 1
 else
 if [[ $COMPOSER_AUTOLOAD_OPTMIZATION == 1 ]]; then
 echo "----> COMPOSER_AUTOLOAD_OPTMIZATION FOUND!"
+composer update –ignore-platform-reqs
 composer install --optimize-autoloader --no-dev -vvv --no-scripts -d $DOCROOT || exit 1
 else
 echo "----> COMPOSER_AUTOLOAD_OPTMIZATION NOT FOUND!"
