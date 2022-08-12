@@ -130,8 +130,6 @@ chmod -R g=u /usr/local/bin/composer /php-fpm /var/log/$PHP_VERSION /run/nginx /
 chmod +x /usr/libexec/s2i/* /php-fpm/phpfpm_exporter /etc/nginx/nginx-prometheus-exporter /usr/local/bin/composer && \
 chmod g=u -R /usr/local
 
-RUN rm /var/www/html/composer.lock
-
 WORKDIR /var/www/html
 
 ENV HOME=/usr/share/nginx \
