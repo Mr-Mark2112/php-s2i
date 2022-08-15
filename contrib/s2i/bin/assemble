@@ -90,7 +90,8 @@ fi
 
 echo -e "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
 eval $(ssh-agent -s)
-cat /tekton/creds-secrets/gitlab-ssh-key | ssh-add -
+ls /tekton/creds-secrets/gitlab-token
+#cat /tekton/creds-secrets/gitlab-ssh-key | ssh-add -
 git config --global user.email "vv.greenko@gmail.com"
 git config --global user.name "Gitlab CI SVC"
 
